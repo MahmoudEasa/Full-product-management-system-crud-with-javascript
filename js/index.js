@@ -118,55 +118,6 @@ const showData = () => {
         </tr>
       `;
       tbody.innerHTML = row;
-
-      // Another solution method
-      // const tr = document.createElement("tr");
-      // tbody.appendChild(tr);
-
-      // const id = document.createElement("td");
-      // id.innerHTML = i + 1;
-
-      // const title = document.createElement("td");
-      // title.innerHTML = t.title;
-
-      // const price = document.createElement("td");
-      // price.innerHTML = t.price;
-
-      // const taxes = document.createElement("td");
-      // taxes.innerHTML = t.taxes;
-
-      // const ads = document.createElement("td");
-      // ads.innerHTML = t.ads;
-
-      // const discount = document.createElement("td");
-      // discount.innerHTML = t.discount;
-
-      // const total = document.createElement("td");
-      // total.innerHTML = t.total;
-
-      // const category = document.createElement("td");
-      // category.innerHTML = t.category;
-
-      // const updateBtn = document.createElement("td");
-      // const btnUpdate = document.createElement("button");
-      // btnUpdate.innerHTML = "Update";
-      // updateBtn.appendChild(btnUpdate);
-
-      // const deleteBtn = document.createElement("td");
-      // const btnDelete = document.createElement("button");
-      // btnDelete.innerHTML = "Delete";
-      // deleteBtn.appendChild(btnDelete);
-
-      // tr.appendChild(id);
-      // tr.appendChild(title);
-      // tr.appendChild(price);
-      // tr.appendChild(taxes);
-      // tr.appendChild(ads);
-      // tr.appendChild(discount);
-      // tr.appendChild(total);
-      // tr.appendChild(category);
-      // tr.appendChild(updateBtn);
-      // tr.appendChild(deleteBtn);
     });
 
     // Create Delete All Button
