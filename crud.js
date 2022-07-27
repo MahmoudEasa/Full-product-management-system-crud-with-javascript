@@ -194,6 +194,10 @@ const deleteProduct = (i) => {
 const deleteAll = () => {
   dataPro = [];
   localStorage.clear();
+  submit.innerHTML = "Create";
+  count.style.display = "block";
+  mood = "create";
+  clearData();
   showData();
 };
 
