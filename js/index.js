@@ -10,6 +10,8 @@ let submit = document.getElementById("submit");
 let search = document.getElementById("search");
 let tbody = document.getElementById("tbody");
 let deleteAllBtn = document.getElementById("deleteAll");
+let searchTitle = document.getElementById("searchTitle");
+let searchCategory = document.getElementById("searchCategory");
 
 let mood = "create";
 let id;
@@ -175,13 +177,14 @@ const updateData = (i) => {
 let searchMood = "title";
 
 // Get Search Mood
-const getSearchMood = (id) => {
-  if (id == "searchTitle") {
+const getSearchMood = (e) => {
+  if (e.target.id == "searchTitle") {
     searchMood = "title";
+    search.placeholder = "Search By Title";
   } else {
     searchMood = "category";
+    search.placeholder = "Search By Category";
   }
-  search.placeholder = "Search By " + searchMood;
 
   search.addEventListener("blur", () => {
     search.placeholder = "Search";
@@ -193,13 +196,15 @@ const getSearchMood = (id) => {
 };
 
 // Search Data
-const searchData = (value) => {
+const searchData = () => {
   let row = "";
 
   if (search.value) {
     for (let i = 0; i < dataPro.length; i++) {
       if (searchMood == "title") {
-        if (dataPro[i].title.toLowerCase().includes(value.toLowerCase())) {
+        if (
+          dataPro[i].title.toLowerCase().includes(search.value.toLowerCase())
+        ) {
           row += `
             <tr>
                 <td>${i + 1}</td>
@@ -216,7 +221,9 @@ const searchData = (value) => {
             `;
         }
       } else {
-        if (dataPro[i].category.toLowerCase().includes(value.toLowerCase())) {
+        if (
+          dataPro[i].category.toLowerCase().includes(search.value.toLowerCase())
+        ) {
           row += `
             <tr>
                 <td>${i + 1}</td>
@@ -239,3 +246,12 @@ const searchData = (value) => {
     showData();
   }
 };
+
+// Add Event Listeners
+price.addEventListener("keyup", getTotal);
+taxes.addEventListener("keyup", getTotal);
+ads.addEventListener("keyup", getTotal);
+discount.addEventListener("keyup", getTotal);
+search.addEventListener("keyup", searchData);
+searchTitle.addEventListener("click", getSearchMood);
+searchCategory.addEventListener("click", getSearchMood);
