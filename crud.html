@@ -30,13 +30,15 @@
 
     <div class="outputs">
       <div class="searchBlock">
-        <input type="text" id="search" placeholder="Search">
+        <input onkeyup="searchData(this.value)" type="text" id="search" placeholder="Search">
 
         <div class="btnSearch">
-          <button id="searchTitle">Search By Title</button>
-          <button id="searchCategory">Search By Category</button>
+          <button onclick="getSearchMood(this.id)" id="searchTitle">Search By Title</button>
+          <button onclick="getSearchMood(this.id)" id="searchCategory">Search By Category</button>
         </div>
         
+        <div id="deleteAll"></div>
+
         <div class="tableContainer">
           <table>
             <tr>
@@ -52,68 +54,7 @@
               <th>Delete</th>
             </tr>
   
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Samsung</td>
-                <td>2000</td>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
-                <td>3000</td>
-                <td>Phone</td>
-                <td><button id="update">Update</button></td>
-                <td><button id="delete">Delete</button></td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Samsung</td>
-                <td>2000</td>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
-                <td>3000</td>
-                <td>Phone</td>
-                <td><button id="update">Update</button></td>
-                <td><button id="delete">Delete</button></td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Samsung</td>
-                <td>2000</td>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
-                <td>3000</td>
-                <td>Phone</td>
-                <td><button id="update">Update</button></td>
-                <td><button id="delete">Delete</button></td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Samsung</td>
-                <td>2000</td>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
-                <td>3000</td>
-                <td>Phone</td>
-                <td><button id="update">Update</button></td>
-                <td><button id="delete">Delete</button></td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Samsung</td>
-                <td>2000</td>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
-                <td>3000</td>
-                <td>Phone</td>
-                <td><button id="update">Update</button></td>
-                <td><button id="delete">Delete</button></td>
-              </tr>
-            </tbody>
+            <tbody id="tbody"></tbody>
           </table>
         </div>
       </div>
